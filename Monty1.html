@@ -1,0 +1,38 @@
+<head>
+  <title>MONTY1</title>
+</head>
+
+<template name="step1">
+  <!-- Announce that Monty has randomized the prize, pick 1,2,3? -->
+  <p>Monty1</p>
+  <p>Game number {{gamecount}}.</p>
+  <p>Host has hidden prize randomly behind one of three doors.</p>
+  <p>Choose a door.</p>
+  <button class="door1class">Door #1</button>
+  <button class="door2class">Door #2</button>
+  <button class="door3class">Door #3</button>
+  <button class="punt">Punt</button>
+</template>
+
+<template name="step2">
+  <!-- Announce chosen door and empty door, stick, switch, flip? -->
+  <p>You have chosen {{chosendoor}}.</p>
+  <p>Host reveals that door {{emptydoor}} is empty.</p>
+  <p>Stick with your chosen door {{chosendoor}} or switch to {{thirddoor}}?</p>
+  <button class="stickclass">Stick</button>
+  <button class="switchclass">Switch</button>
+  <button class="flipclass">Flip</button>
+  <button class="punt">Punt</button>
+</template>
+
+<template name="step3">
+  <p>Prize was hidden behind door {{prizedoor}}.</p>
+  <p>You first chose {{chosendoor}}.</p>
+  <p>You finally chose {{finaldoor}}.</p>
+  <p>Games played is {{gamecount}}.</p>
+  <p>Prizes won is {{wincount}}.</p>
+  <p>Door counts: {{doorcounts}}.</p>
+  <p>Strategy counts after 100,000 plays [stick,switch,flip]: {{strategycounts}}.</p>
+  <button class="again">Play Again</button>
+  <button class="restart">Restart</button>
+</template>
