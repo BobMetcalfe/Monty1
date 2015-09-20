@@ -29,6 +29,23 @@ if (Meteor.isClient) {
     Session.set("wincount", 0); // Number of games=prizes won
     Session.set("doorcounts", [0, 0, 0]); // Number of times door # had prize
     Session.set("strategycounts", [0, 0, 0]); // Stick, switch, flip
+
+    // Assign colors to door randomly for this game
+    var list = ["button-color-1", "button-color-2", "button-color-3"]
+    door1color = _.sample(list);
+    list = _.filter(list, function(color) {
+      return color != door1color;
+    });
+    door2color = _.sample(list);
+    list = _.filter(list, function(color) {
+      return color != door2color;
+    });
+    door3color = _.first(list);
+
+    Session.set("door1color", door1color);
+    Session.set("door2color", door2color);
+    Session.set("door3color", door3color);
+
     Router.go("/steps/1");
   }
 
@@ -42,6 +59,9 @@ if (Meteor.isClient) {
 
   globalregister("step");
   globalregister("prizedoor");
+  globalregister("door1color");
+  globalregister("door2color");
+  globalregister("door3color");
   globalregister("chosendoor");
   globalregister("emptydoor");
   globalregister("thirddoor");
@@ -82,16 +102,16 @@ if (Meteor.isClient) {
   }
 
   Template.step1.events({
-    'click button.door1class': function() {
-      gotostep2(1)
+    'click .door1class': function() {
+      gotostep2(1);
     },
-    'click button.door2class': function() {
-      gotostep2(2)
+    'click .door2class': function() {
+      gotostep2(2);
     },
-    'click button.door3class': function() {
-      gotostep2(3)
+    'click .door3class': function() {
+      gotostep2(3);
     },
-    'click button.puntclass': function() {
+    'click .puntclass': function() {
       initialize();
     }
   })

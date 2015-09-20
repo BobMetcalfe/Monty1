@@ -1,17 +1,24 @@
 <head>
   <title>MONTY1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <template name="step1">
   <!-- Announce that Monty has randomized the prize, pick 1,2,3? -->
-  <p>Monty1</p>
-  <p>Game number {{gamecount}}.</p>
-  <p>Host has hidden prize randomly behind one of three doors.</p>
-  <p>Choose a door.</p>
-  <button class="door1class">Door #1</button>
-  <button class="door2class">Door #2</button>
-  <button class="door3class">Door #3</button>
-  <button class="punt">Punt</button>
+  <h1>Monty1</h1>
+  <div id="Result" class="Nonbuttons">
+    <p>Game number {{gamecount}}.</p>
+  </div>
+  <div id="Question" class="Nonbuttons">
+    <p>Host has hidden prize randomly behind one of three doors.</p>
+    <p>Choose a door.</p>
+  </div>
+  <div id="Buttons">
+    <div class="door1class {{door1color}}">Door #1</div>
+    <div class="door2class {{door2color}}">Door #2</div>
+    <div class="door3class {{door3color}}">Door #3</div>
+    <div class="punt float-right">Punt</div>
+  </div>
 </template>
 
 <template name="step2">

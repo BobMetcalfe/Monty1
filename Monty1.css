@@ -1,1 +1,59 @@
 /* CSS declarations go here */
+
+h1 {
+  color: orange;
+  text-align: center;
+}
+
+.Nonbuttons{
+  padding: 10px;
+  margin: 1px;
+  font-size: 32px;
+}
+
+#Result{
+  background-color: green;
+  color: white;
+}
+
+#Question{
+  background-color: yellow;
+  color: black;
+}
+
+#Buttons{
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: black;
+  padding: 20px;
+}
+
+#Buttons div{
+  font-size: 22px;
+  padding: 15px 5px;
+  margin-right: 5px;
+  float: left;
+  cursor: pointer;
+}
+
+.float-right{
+  float: right !important;
+}
+
+.button-color-1{
+  background-color: red;
+}
+
+.button-color-2{
+  background-color: green;
+}
+
+.button-color-3{
+  background-color: blue;
+}
+
+.punt{
+  background-color: white;
+}
