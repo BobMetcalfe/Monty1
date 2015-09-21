@@ -47,7 +47,7 @@ if (Meteor.isClient) {
     Session.set("door2color", door2color);
     Session.set("door3color", door3color);
 
-    // Router.go("/steps/1");
+    Router.go("/steps/1");
   }
 
   initialize() // Start
@@ -133,25 +133,25 @@ if (Meteor.isClient) {
   }
 
   Template.step2.events({
-    'click button.stickclass': function() {
+    'click .stickclass': function() {
       gotostep3("chosendoor")
     },
-    'click button.switchclass': function() {
+    'click .switchclass': function() {
       gotostep3("thirddoor")
     },
-    'click button.flipclass': function() {
+    'click .flipclass': function() {
       gotostep3(_.sample(["chosendoor", "thirddoor"]))
     },
-    'click button.puntclass': function() {
+    'click .puntclass': function() {
       initialize();
     }
   })
 
   Template.step3.events({
-    'click button.again': function() {
+    'click .again': function() {
       Router.go("/steps/1");
     },
-    'click button.restart': function() {
+    'click .restart': function() {
       initialize()
     }
   })
@@ -163,7 +163,7 @@ if (Meteor.isClient) {
       swct = 0,
       flct = 0
 
-    for (var i = 0; i < 100000; i++) {
+    for (var i = 0; i < 1000; i++) {
       pd = _.random(1, 3)
 
       dc = Session.get("doorcounts"); // Count all random door selections

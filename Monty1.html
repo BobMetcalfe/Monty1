@@ -40,13 +40,17 @@
 </template>
 
 <template name="step3">
+  <h1>Monty3</h1>
+  <div id="Result" class="Nonbuttons">
   <p>Prize was hidden behind door {{prizedoor}}.</p>
   <p>You first chose {{chosendoor}}.</p>
   <p>You finally chose {{finaldoor}}.</p>
   <p>Games played is {{gamecount}}.</p>
   <p>Prizes won is {{wincount}}.</p>
-  <p>Door counts: {{doorcounts}}.</p>
-  <p>Strategy counts after 100,000 plays [stick,switch,flip]: {{strategycounts}}.</p>
-  <button class="again">Play Again</button>
-  <button class="restart">Restart</button>
+  <!-- <p>Door counts: {{doorcounts}}.</p> -->
+  </div>
+  <div id="Buttons">
+  <div class="again step3button">Play Again</div>
+  <div class="restart step3button">Restart</div>
+  </div>
 </template>

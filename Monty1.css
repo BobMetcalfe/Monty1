@@ -5,8 +5,12 @@ h1 {
   text-align: center;
 }
 
+p {
+  margin: 5px;
+}
+
 .Nonbuttons{
-  padding: 10px;
+  padding: 5px;
   margin: 1px;
   font-size: 32px;
 }
@@ -22,6 +26,7 @@ h1 {
 }
 
 #Buttons{
+  display:flex;
   position: fixed;
   bottom: 0px;
   left: 0px;
@@ -34,12 +39,8 @@ h1 {
   font-size: 22px;
   padding: 15px 5px;
   margin-right: 5px;
-  float: left;
   cursor: pointer;
-}
-
-.float-right{
-  float: right !important;
+  flex: 1 100%;
 }
 
 .button-color-1{
@@ -54,7 +55,7 @@ h1 {
   background-color: blue;
 }
 
-.step2button{
+.step2button,.step3button{
   background-color: yellow;
 }
 
