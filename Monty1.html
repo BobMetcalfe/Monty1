@@ -5,7 +5,7 @@
 
 <template name="step1">
   <!-- Announce that Monty has randomized the prize, pick 1,2,3? -->
-  <h1>Monty1</h1>
+  <h1>Monty3</h1>
   <div id="Result" class="Nonbuttons">
     <p>Game number {{gamecount}}.</p>
   </div>
@@ -23,13 +23,20 @@
 
 <template name="step2">
   <!-- Announce chosen door and empty door, stick, switch, flip? -->
+  <h1>Monty3</h1>
+  <div id="Result" class="Nonbuttons">
   <p>You have chosen {{chosendoor}}.</p>
   <p>Host reveals that door {{emptydoor}} is empty.</p>
+  </div>
+  <div id="Question" class="Nonbuttons">
   <p>Stick with your chosen door {{chosendoor}} or switch to {{thirddoor}}?</p>
-  <button class="stickclass">Stick</button>
-  <button class="switchclass">Switch</button>
-  <button class="flipclass">Flip</button>
-  <button class="punt">Punt</button>
+  </div>
+  <div id="Buttons">
+  <div class="stickclass step2button">Stick</div>
+  <div class="switchclass step2button">Switch</div>
+  <div class="flipclass step2button">Flip</div>
+  <div class="punt float-right">Punt</div>
+  </div>
 </template>
 
 <template name="step3">

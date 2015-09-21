@@ -1,15 +1,16 @@
 // Monty1 - Bob Metcalfe's first try at Monty Hall Paradox
 
 // Open log of game results
-var Monty1Log = new Mongo.Collection("Monty1Log");
+Monty1Log = new Mongo.Collection("Monty3Log");
 
 // Create router for HTML rendering
-Router.route('/', function() {
-  Router.go("/steps/1");
-});
 
 Router.route('/steps/:step', function() {
   this.render('step' + this.params.step);
+});
+
+Router.route('/', function() {
+  Router.go("/steps/1");
 });
 
 // Client side code
@@ -46,7 +47,7 @@ if (Meteor.isClient) {
     Session.set("door2color", door2color);
     Session.set("door3color", door3color);
 
-    Router.go("/steps/1");
+    // Router.go("/steps/1");
   }
 
   initialize() // Start
