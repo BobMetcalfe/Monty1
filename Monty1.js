@@ -9,9 +9,10 @@ Router.route('/steps/:step', function() {
   this.render('step' + this.params.step);
 });
 
-Router.route('/', function() {
-  Router.go("/steps/1");
-});
+// Commenting this out for now to get the app running.
+// Router.route('/', function() {
+//   Router.go("/steps/1");
+// });
 
 // Client side code
 if (Meteor.isClient) {
