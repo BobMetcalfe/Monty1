@@ -128,8 +128,6 @@ if (Meteor.isClient) {
       Session.set("wincount", Session.get("wincount") + 1)
     };
 
-    Session.set("strategycounts", play1000()); // Run game 1000 times to check stats
-
     Router.go("/steps/3");
   }
 
@@ -154,17 +152,56 @@ if (Meteor.isClient) {
     },
     'click .restart': function() {
       initialize()
+    },
+    'click .run': function() {
+      runSimulation()
     }
   })
 
-  function play1000() {
+  function drawChart(series1, series2, labels) {
+
+    var descriptions = [
+      "Switch strategy is pink.",
+      "Stay strategy is red."
+    ]
+
+    var chartDiv = document.querySelector(".ct-chart")
+
+    // If we haven't displayed the chart before, add descriptions.
+    if (!chartDiv.classList.contains("chart-visible")) {
+      descriptions.forEach(function(description) {
+        var p = document.createElement("p")
+        p.innerText = description
+        chartDiv.appendChild(p)
+      })
+    }
+
+    // Add class to chartDiv
+    chartDiv.classList.add("chart-visible")
+
+    new Chartist.Line(".ct-chart", {
+      labels: labels,
+      series: [
+        series1,
+        series2
+      ]
+    });
+  }
+
+  function runSimulation() {
+
+    var iterations = document.getElementById("iterations-input").value;
+
+    var labels = []
+    var stctSeries = []
+    var swctSeries = []
     var pd, cd, ed, td, fd, dc
     var fdst, fdsw, fdfl
     var stct = 0,
       swct = 0,
       flct = 0
 
-    for (var i = 0; i < 1000; i++) {
+    for (var i = 0; i < iterations; i++) {
       pd = _.random(1, 3)
 
       dc = Session.get("doorcounts"); // Count all random door selections
@@ -180,7 +217,13 @@ if (Meteor.isClient) {
       if (fdst == pd) ++stct
       if (fdsw == pd) ++swct
       if (fdfl == pd) ++flct
+
+      labels.push(i)
+      stctSeries.push(stct)
+      swctSeries.push(swct)
     }
+
+    drawChart(stctSeries, swctSeries, labels)
     return [stct, swct, flct]
   }
 }
