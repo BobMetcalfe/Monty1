@@ -62,3 +62,18 @@ p {
 .punt{
   background-color: white;
 }
+
+.chart-visible {
+  height: 500px;
+  padding-bottom: 200px;
+  padding-top: 20px;
+  background-color: white;
+}
+
+.chart-visible p:first-of-type {
+  color: pink;
+}
+
+.chart-visible p:last-of-type {
+  color: red;
+}
