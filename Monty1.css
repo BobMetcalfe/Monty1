@@ -71,9 +71,9 @@ p {
 }
 
 .chart-visible p:first-of-type {
-  color: pink;
+  color: #f05b4f;
 }
 
 .chart-visible p:last-of-type {
-  color: red;
+  color: #d70206;
 }
